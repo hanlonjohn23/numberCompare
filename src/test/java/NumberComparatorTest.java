@@ -204,6 +204,38 @@ public class NumberComparatorTest {
     }
 
     @Test
+    public void doubleAndHex_ValueOneIsGreater(){
+        NumericDouble v1 = new NumericDouble(16.0);
+        NumericHex v2 = new NumericHex("f");
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(1, numericCompare.compare(v1,v2));
+    }
+
+    @Test
+    public void doubleAndHex_ValueOneIsLesser(){
+        NumericDouble v1 = new NumericDouble(14.0);
+        NumericHex v2 = new NumericHex("f");
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(-1, numericCompare.compare(v1,v2));
+    }
+
+    @Test
+    public void doubleAndHex_BothAreEqual() {
+        NumericDouble v1 = new NumericDouble(15.0);
+        NumericHex v2 = new NumericHex("f");
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(0, numericCompare.compare(v1, v2));
+    }
+
+
+
+    @Test
     public void numericIntegerToString(){
         NumericInteger value = new NumericInteger(5);
         Assert.assertEquals("5", value.toString());
@@ -226,4 +258,11 @@ public class NumberComparatorTest {
         NumericLong value = new NumericLong((long)5);
         Assert.assertEquals("5", value.toString());
     }
+
+    @Test
+    public void numericHexToString(){
+        NumericHex value = new NumericHex("f");
+        Assert.assertEquals("f", value.toString());
+    }
+
 }

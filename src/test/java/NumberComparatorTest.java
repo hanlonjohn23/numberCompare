@@ -202,4 +202,28 @@ public class NumberComparatorTest {
 
         Assert.assertEquals(0, numericCompare.compare(v1, v2));
     }
+
+    @Test
+    public void numericIntegerToString(){
+        NumericInteger value = new NumericInteger(5);
+        Assert.assertEquals("5", value.toString());
+    }
+
+    @Test
+    public void numericDoubleToString(){
+        NumericDouble value = new NumericDouble(5.0);
+        Assert.assertEquals("5.0", value.toString());
+    }
+
+    @Test
+    public void numericStringToString(){
+        NumericString value = new NumericString("5");
+        Assert.assertEquals("5", value.toString());
+    }
+
+    @Test
+    public void numericLongToString(){
+        NumericLong value = new NumericLong((long)5);
+        Assert.assertEquals("5", value.toString());
+    }
 }

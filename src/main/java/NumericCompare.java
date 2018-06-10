@@ -1,11 +1,5 @@
 import java.util.Comparator;
 
-/**
- * Code takes two numbers, compares those numbers, and prints the outcome of the comparison.
- * @author John Hanlon
- * @since 2018-06-09
- */
-
 public class NumericCompare implements Comparator<Numeric> {
 
     @Override

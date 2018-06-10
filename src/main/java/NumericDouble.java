@@ -9,4 +9,9 @@ public class NumericDouble implements Numeric<Double>{
     public double getDoubleValue() {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 }

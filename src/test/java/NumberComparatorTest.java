@@ -173,5 +173,33 @@ public class NumberComparatorTest {
         Assert.assertEquals(0, numericCompare.compare(v1,v2));
     }
 
+    @Test
+    public void doubleAndLong_ValueOneIsGreater(){
+        NumericDouble v1 = new NumericDouble(10.0);
+        NumericLong v2 = new NumericLong((long) 5);
 
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(1, numericCompare.compare(v1,v2));
+    }
+
+    @Test
+    public void doubleAndLong_ValueOneIsLesser(){
+        NumericDouble v1 = new NumericDouble(5.0);
+        NumericLong v2 = new NumericLong((long) 10);
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(-1, numericCompare.compare(v1,v2));
+    }
+
+    @Test
+    public void doubleAndLong_BothAreEqual() {
+        NumericDouble v1 = new NumericDouble(10.0);
+        NumericLong v2 = new NumericLong((long) 10);
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(0, numericCompare.compare(v1, v2));
+    }
 }

@@ -10,16 +10,10 @@ public class NumericCompare implements Comparator<Numeric> {
 
     @Override
     public int compare(Numeric o1, Numeric o2) {
-        Integer v1 = o1.getIntValue();
-        Integer v2 = o2.getIntValue();
+        Double v1 = o1.getDoubleValue();
+        Double v2 = o2.getDoubleValue();
 
-        if (v1 > v2)
-            return 1;
-        else if (v1 < v2)
-            return -1;
-        else
-            return 0;
+        return v1.compareTo(v2);
     }
-
 
 }

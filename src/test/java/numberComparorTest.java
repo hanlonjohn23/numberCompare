@@ -1,20 +1,43 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class NumberComparorTest {
 
     @Test
-    public void valueOneIsGreater(){
-        Assert.assertEquals(new NumberComparor(1,0).toString(), "1 is greater than 0.");
+    public void intOnly_ValueOneIsGreater(){
+        NumberInteger v1 = new NumberInteger(10);
+        NumberInteger v2 = new NumberInteger(5);
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(numericCompare.compare(v1,v2), 1);
     }
 
     @Test
-    public void valueOneIsLesser(){
-        Assert.assertEquals(new NumberComparor(0,1).toString(), "0 is less than 1.");
+    public void intOnly_ValueOneIsLesser(){
+        NumberInteger v1 = new NumberInteger(5);
+        NumberInteger v2 = new NumberInteger(10);
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(numericCompare.compare(v1,v2), -1);
     }
 
     @Test
-    public void bothAreEqual(){
-        Assert.assertEquals(new NumberComparor(1,1).toString(), "1 is equal to 1.");
+    public void intOnly_BothAreEqual(){
+        NumberInteger v1 = new NumberInteger(10);
+        NumberInteger v2 = new NumberInteger(10);
+
+        NumericCompare numericCompare = new NumericCompare();
+
+        Assert.assertEquals(numericCompare.compare(v1,v2), 0);
     }
+
 }
